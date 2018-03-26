@@ -30,6 +30,7 @@ using namespace std;
 #include <sys/types.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
+#include <unistd.h>
 #define TRUE 1
 #define FALSE 0
 #define SOCKET_ERROR (-1)
