@@ -10,7 +10,11 @@
 #include "CtrlCmdUtil2.h"
 #include "CtrlCmdDef.h"
 #include "ErrDef.h"
+
 #include <netdb.h>
+#include <sys/select.h>
+#include <unistd.h>
+#include <fcntl.h>
 
 //#include <Objbase.h>
 
@@ -94,27 +98,56 @@ DWORD CSendCtrlCmd::SendTCP(wstring ip, DWORD port, DWORD timeOut, CMD_STREAM* s
 	int ret = getaddrinfo(hostStr.c_str(),portStr.c_str(),&hints,&result);
 
 	if(ret!=0){
-		fprintf(stderr,"getaddrinfo: %s\n",gai_strerror(ret));
+		fprintf(stderr,"Error getaddrinfo (%s)\n",gai_strerror(ret));
 		return CMD_ERR_CONNECT;
 	}
 
 	int sock;
 	for(rp = result; rp != NULL; rp = rp->ai_next){
-		sock = socket(rp->ai_family, rp->ai_socktype, rp->ai_protocol);
+		sock = socket(rp->ai_family, rp->ai_socktype | SOCK_NONBLOCK, rp->ai_protocol);
 		if(sock == -1)
 			continue;
-		if(connect(sock, rp->ai_addr, rp->ai_addrlen) == 0)
+		ret = connect(sock, rp->ai_addr, rp->ai_addrlen);
+		if(ret == 0)
 			break;
+		else if(errno == EINPROGRESS){
+			struct timeval tv;
+			fd_set fds;
+			tv.tv_sec = 0;
+			tv.tv_usec = timeOut * 1000;
+			FD_ZERO(&fds);
+			FD_SET(sock, &fds);
+			ret = select(sock+1, NULL, &fds, NULL, &tv);
+			if(ret > 0){
+				int valopt;
+				socklen_t lon = sizeof(int);
+				if(getsockopt(sock, SOL_SOCKET, SO_ERROR, (void *)(&valopt), &lon) >= 0 && valopt==0)
+					break;
+			}
+		}
 		close(sock);
 	}
 
 	if(rp == NULL){
 		freeaddrinfo(result);
-		fprintf(stderr,"Could not connect\n");
+		fprintf(stderr,"Error Could not connect\n");
 		return CMD_ERR_CONNECT;
 	}
 
 	freeaddrinfo(result);
+	// Set to blocking mode
+	{
+		long arg;
+		if( (arg = fcntl(sock, F_GETFL, NULL)) < 0){
+			fprintf(stderr,"Error fcntl(..., F_GETFL) (%s)\n",strerror(errno));
+			return CMD_ERR;
+		}
+		arg &= (~O_NONBLOCK);
+		if( fcntl(sock, F_SETFL, arg) < 0){
+			fprintf(stderr,"Error fcntl(..., F_SETFL) (%s)\n",strerror(errno));
+			return CMD_ERR;
+		}
+	}
 
 	DWORD read = 0;
 	//送信
