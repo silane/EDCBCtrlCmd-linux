@@ -10,6 +10,7 @@
 #include "CtrlCmdUtil2.h"
 #include "CtrlCmdDef.h"
 #include "ErrDef.h"
+#include <netdb.h>
 
 //#include <Objbase.h>
 
@@ -79,28 +80,41 @@ DWORD CSendCtrlCmd::SendTCP(wstring ip, DWORD port, DWORD timeOut, CMD_STREAM* s
 		return CMD_ERR_INVALID_ARG;
 	}
 
-	struct sockaddr_in server;
-	SOCKET sock;
+	struct addrinfo hints;
+	memset(&hints,0,sizeof(hints));
+	hints.ai_family = AF_INET;
+	hints.ai_socktype = SOCK_STREAM;
+	hints.ai_protocol = 0;
+	hints.ai_flags = AI_ADDRCONFIG;
 
-	sock = socket(AF_INET, SOCK_STREAM, 0);
-	server.sin_family = AF_INET;
-	server.sin_port = htons((WORD)port);
-	string strA = "";
-	WtoA(ip, strA);
-	server.sin_addr.s_addr = inet_addr(strA.c_str());
-	DWORD socketBuffSize = 1024*1024;
-	setsockopt(sock, SOL_SOCKET, SO_SNDBUF, (const char*)&socketBuffSize, sizeof(socketBuffSize));
-	setsockopt(sock, SOL_SOCKET, SO_SNDBUF, (const char*)&socketBuffSize, sizeof(socketBuffSize));
+	string hostStr;
+	WtoA(ip,hostStr);
+	string portStr = to_string(port);
+	struct addrinfo *result, *rp;
+	int ret = getaddrinfo(hostStr.c_str(),portStr.c_str(),&hints,&result);
 
-	int ret = connect(sock, (struct sockaddr *)&server, sizeof(server));
-	if( ret == SOCKET_ERROR ){
-		//int a= GetLastError();
-		//wstring aa;
-		//Format(aa,L"%d",a);
-		//OutputDebugString(aa.c_str());
-		closesocket(sock);
+	if(ret!=0){
+		fprintf(stderr,"getaddrinfo: %s\n",gai_strerror(ret));
 		return CMD_ERR_CONNECT;
 	}
+
+	int sock;
+	for(rp = result; rp != NULL; rp = rp->ai_next){
+		sock = socket(rp->ai_family, rp->ai_socktype, rp->ai_protocol);
+		if(sock == -1)
+			continue;
+		if(connect(sock, rp->ai_addr, rp->ai_addrlen) == 0)
+			break;
+		close(sock);
+	}
+
+	if(rp == NULL){
+		freeaddrinfo(result);
+		fprintf(stderr,"Could not connect\n");
+		return CMD_ERR_CONNECT;
+	}
+
+	freeaddrinfo(result);
 
 	DWORD read = 0;
 	//送信
