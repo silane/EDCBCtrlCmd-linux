@@ -6,52 +6,45 @@
 ////////////////////////////////////////////////////////////////////////////////////////////
 //コマンド送信用バイナリ作成関数
 
-DWORD GetVALUESize2(WORD ver, char val );
-BOOL WriteVALUE2(WORD ver, char val, BYTE* buff, DWORD buffSize, DWORD* writeSize );
-BOOL ReadVALUE2(WORD ver, char* val, BYTE* buff, DWORD buffSize, DWORD* readSize );
-DWORD GetVALUESize2(WORD ver, unsigned char val );
-BOOL WriteVALUE2(WORD ver, unsigned char val, BYTE* buff, DWORD buffSize, DWORD* writeSize );
-BOOL ReadVALUE2(WORD ver, unsigned char* val, BYTE* buff, DWORD buffSize, DWORD* readSize );
+DWORD GetVALUESize2(WORD ver, int8_t val );
+BOOL WriteVALUE2(WORD ver, int8_t val, BYTE* buff, DWORD buffSize, DWORD* writeSize );
+BOOL ReadVALUE2(WORD ver, int8_t* val, BYTE* buff, DWORD buffSize, DWORD* readSize );
+DWORD GetVALUESize2(WORD ver, uint8_t val );
+BOOL WriteVALUE2(WORD ver, uint8_t val, BYTE* buff, DWORD buffSize, DWORD* writeSize );
+BOOL ReadVALUE2(WORD ver, uint8_t* val, BYTE* buff, DWORD buffSize, DWORD* readSize );
 
-DWORD GetVALUESize2(WORD ver, short val );
-BOOL WriteVALUE2(WORD ver, short val, BYTE* buff, DWORD buffSize, DWORD* writeSize );
-BOOL ReadVALUE2(WORD ver, short* val, BYTE* buff, DWORD buffSize, DWORD* readSize );
-DWORD GetVALUESize2(WORD ver, unsigned short val );
-BOOL WriteVALUE2(WORD ver, unsigned short val, BYTE* buff, DWORD buffSize, DWORD* writeSize );
-BOOL ReadVALUE2(WORD ver, unsigned short* val, BYTE* buff, DWORD buffSize, DWORD* readSize );
+DWORD GetVALUESize2(WORD ver, int16_t val );
+BOOL WriteVALUE2(WORD ver, int16_t val, BYTE* buff, DWORD buffSize, DWORD* writeSize );
+BOOL ReadVALUE2(WORD ver, int16_t* val, BYTE* buff, DWORD buffSize, DWORD* readSize );
+DWORD GetVALUESize2(WORD ver, uint16_t val );
+BOOL WriteVALUE2(WORD ver, uint16_t val, BYTE* buff, DWORD buffSize, DWORD* writeSize );
+BOOL ReadVALUE2(WORD ver, uint16_t* val, BYTE* buff, DWORD buffSize, DWORD* readSize );
 
-DWORD GetVALUESize2(WORD ver, int val );
-BOOL WriteVALUE2(WORD ver, int val, BYTE* buff, DWORD buffSize, DWORD* writeSize );
-BOOL ReadVALUE2(WORD ver, int* val, BYTE* buff, DWORD buffSize, DWORD* readSize );
-DWORD GetVALUESize2(WORD ver, unsigned int val );
-BOOL WriteVALUE2(WORD ver, unsigned int val, BYTE* buff, DWORD buffSize, DWORD* writeSize );
-BOOL ReadVALUE2(WORD ver, unsigned int* val, BYTE* buff, DWORD buffSize, DWORD* readSize );
+DWORD GetVALUESize2(WORD ver, int32_t val );
+BOOL WriteVALUE2(WORD ver, int32_t val, BYTE* buff, DWORD buffSize, DWORD* writeSize );
+BOOL ReadVALUE2(WORD ver, int32_t* val, BYTE* buff, DWORD buffSize, DWORD* readSize );
+DWORD GetVALUESize2(WORD ver, uint32_t val );
+BOOL WriteVALUE2(WORD ver, uint32_t val, BYTE* buff, DWORD buffSize, DWORD* writeSize );
+BOOL ReadVALUE2(WORD ver, uint32_t* val, BYTE* buff, DWORD buffSize, DWORD* readSize );
 
-DWORD GetVALUESize2(WORD ver, long val );
-BOOL WriteVALUE2(WORD ver, long val, BYTE* buff, DWORD buffSize, DWORD* writeSize );
-BOOL ReadVALUE2(WORD ver, long* val, BYTE* buff, DWORD buffSize, DWORD* readSize );
-DWORD GetVALUESize2(WORD ver, unsigned long val );
-BOOL WriteVALUE2(WORD ver, unsigned long val, BYTE* buff, DWORD buffSize, DWORD* writeSize );
-BOOL ReadVALUE2(WORD ver, unsigned long* val, BYTE* buff, DWORD buffSize, DWORD* readSize );
+DWORD GetVALUESize2(WORD ver, int64_t val );
+BOOL WriteVALUE2(WORD ver, int64_t val, BYTE* buff, DWORD buffSize, DWORD* writeSize );
+BOOL ReadVALUE2(WORD ver, int64_t* val, BYTE* buff, DWORD buffSize, DWORD* readSize );
+DWORD GetVALUESize2(WORD ver, uint64_t val );
+BOOL WriteVALUE2(WORD ver, uint64_t val, BYTE* buff, DWORD buffSize, DWORD* writeSize );
+BOOL ReadVALUE2(WORD ver, uint64_t* val, BYTE* buff, DWORD buffSize, DWORD* readSize );
 
-DWORD GetVALUESize2(WORD ver, __int64 val );
-BOOL WriteVALUE2(WORD ver, __int64 val, BYTE* buff, DWORD buffSize, DWORD* writeSize );
-BOOL ReadVALUE2(WORD ver, __int64* val, BYTE* buff, DWORD buffSize, DWORD* readSize );
-DWORD GetVALUESize2(WORD ver, unsigned __int64 val );
-BOOL WriteVALUE2(WORD ver, unsigned __int64 val, BYTE* buff, DWORD buffSize, DWORD* writeSize );
-BOOL ReadVALUE2(WORD ver, unsigned __int64* val, BYTE* buff, DWORD buffSize, DWORD* readSize );
+DWORD GetVALUESize2(WORD ver, vector<uint16_t>* val);
+BOOL WriteVALUE2(WORD ver, vector<uint16_t>* val, BYTE* buff, DWORD buffSize, DWORD* writeSize );
+BOOL ReadVALUE2(WORD ver, vector<uint16_t>* val, BYTE* buff, DWORD buffSize, DWORD* readSize );
 
-DWORD GetVALUESize2(WORD ver, vector<unsigned short>* val);
-BOOL WriteVALUE2(WORD ver, vector<unsigned short>* val, BYTE* buff, DWORD buffSize, DWORD* writeSize );
-BOOL ReadVALUE2(WORD ver, vector<unsigned short>* val, BYTE* buff, DWORD buffSize, DWORD* readSize );
+DWORD GetVALUESize2(WORD ver, vector<uint32_t>* val);
+BOOL WriteVALUE2(WORD ver, vector<uint32_t>* val, BYTE* buff, DWORD buffSize, DWORD* writeSize );
+BOOL ReadVALUE2(WORD ver, vector<uint32_t>* val, BYTE* buff, DWORD buffSize, DWORD* readSize );
 
-DWORD GetVALUESize2(WORD ver, vector<unsigned long>* val);
-BOOL WriteVALUE2(WORD ver, vector<unsigned long>* val, BYTE* buff, DWORD buffSize, DWORD* writeSize );
-BOOL ReadVALUE2(WORD ver, vector<unsigned long>* val, BYTE* buff, DWORD buffSize, DWORD* readSize );
-
-DWORD GetVALUESize2(WORD ver, vector<__int64>* val);
-BOOL WriteVALUE2(WORD ver, vector<__int64>* val, BYTE* buff, DWORD buffSize, DWORD* writeSize );
-BOOL ReadVALUE2(WORD ver, vector<__int64>* val, BYTE* buff, DWORD buffSize, DWORD* readSize );
+DWORD GetVALUESize2(WORD ver, vector<int64_t>* val);
+BOOL WriteVALUE2(WORD ver, vector<int64_t>* val, BYTE* buff, DWORD buffSize, DWORD* writeSize );
+BOOL ReadVALUE2(WORD ver, vector<int64_t>* val, BYTE* buff, DWORD buffSize, DWORD* readSize );
 
 DWORD GetVALUESize2(WORD ver, wstring val );
 BOOL WriteVALUE2(WORD ver, wstring val, BYTE* buff, DWORD buffSize, DWORD* writeSize );

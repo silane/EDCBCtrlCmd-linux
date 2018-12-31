@@ -34,17 +34,17 @@ using namespace std;
 #define TRUE 1
 #define FALSE 0
 #define SOCKET_ERROR (-1)
-typedef int BOOL;
+typedef int32_t BOOL;
 typedef BOOL *LPBOOL;
 typedef unsigned char BYTE;
-typedef unsigned short WORD;
-typedef int INT;
-typedef unsigned int UINT;
-typedef unsigned long DWORD;
+typedef uint16_t WORD;
+typedef int32_t INT;
+typedef uint32_t UINT;
+typedef uint32_t DWORD;
 typedef int64_t LONGLONG;
 typedef uint64_t ULONGLONG;
-//typedef long long __int64;
-#define __int64 long long
+//typedef int64_t __int64;
+#define __int64 int64_t  // Uses #define in order to make "unsigned __int64" valid.
 typedef char CHAR;
 typedef CHAR *LPSTR;
 typedef const CHAR *LPCSTR;

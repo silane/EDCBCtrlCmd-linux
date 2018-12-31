@@ -3,330 +3,268 @@
 #include "Util.h"
 
 
-DWORD GetVALUESize2(WORD ver, char val )
+DWORD GetVALUESize2(WORD ver, int8_t val )
 {
-	return sizeof(char);
+	return sizeof(int8_t);
 }
 
-BOOL WriteVALUE2(WORD ver, char val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
+BOOL WriteVALUE2(WORD ver, int8_t val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
 {
-	if( buff == NULL || sizeof(char) > buffSize ){
+	if( buff == NULL || sizeof(int8_t) > buffSize ){
 		return FALSE;
 	}
-	memcpy(buff, &val, sizeof(char));
+	memcpy(buff, &val, sizeof(int8_t));
 	if( writeSize != NULL ){
-		*writeSize = sizeof(char);
+		*writeSize = sizeof(int8_t);
 	}
 	return TRUE;
 }
 
-BOOL ReadVALUE2(WORD ver, char* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
+BOOL ReadVALUE2(WORD ver, int8_t* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
 {
-	if( buff == NULL || sizeof(char) > buffSize ){
+	if( buff == NULL || sizeof(int8_t) > buffSize ){
 		return FALSE;
 	}
 	if( val != NULL ){
-		*val = *(char*)buff;
+		*val = *(int8_t*)buff;
 	}
 	if( readSize != NULL ){
-		*readSize = sizeof(char);
+		*readSize = sizeof(int8_t);
 	}
 	return TRUE;
 }
 
-DWORD GetVALUESize2(WORD ver, unsigned char val )
+DWORD GetVALUESize2(WORD ver, uint8_t val )
 {
-	return sizeof(unsigned char);
+	return sizeof(uint8_t);
 }
 
-BOOL WriteVALUE2(WORD ver, unsigned char val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
+BOOL WriteVALUE2(WORD ver, uint8_t val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
 {
-	if( buff == NULL || sizeof(unsigned char) > buffSize ){
+	if( buff == NULL || sizeof(uint8_t) > buffSize ){
 		return FALSE;
 	}
-	memcpy(buff, &val, sizeof(unsigned char));
+	memcpy(buff, &val, sizeof(uint8_t));
 	if( writeSize != NULL ){
-		*writeSize = sizeof(unsigned char);
+		*writeSize = sizeof(uint8_t);
 	}
 	return TRUE;
 }
 
-BOOL ReadVALUE2(WORD ver, unsigned char* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
+BOOL ReadVALUE2(WORD ver, uint8_t* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
 {
-	if( buff == NULL || sizeof(unsigned char) > buffSize ){
+	if( buff == NULL || sizeof(uint8_t) > buffSize ){
 		return FALSE;
 	}
 	if( val != NULL ){
-		*val = *(unsigned char*)buff;
+		*val = *(uint8_t*)buff;
 	}
 	if( readSize != NULL ){
-		*readSize = sizeof(unsigned char);
+		*readSize = sizeof(uint8_t);
 	}
 	return TRUE;
 }
 
-DWORD GetVALUESize2(WORD ver, short val )
+DWORD GetVALUESize2(WORD ver, int16_t val )
 {
-	return sizeof(short);
+	return sizeof(int16_t);
 }
 
-BOOL WriteVALUE2(WORD ver, short val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
+BOOL WriteVALUE2(WORD ver, int16_t val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
 {
-	if( buff == NULL || sizeof(short) > buffSize ){
+	if( buff == NULL || sizeof(int16_t) > buffSize ){
 		return FALSE;
 	}
-	memcpy(buff, &val, sizeof(short));
+	memcpy(buff, &val, sizeof(int16_t));
 	if( writeSize != NULL ){
-		*writeSize = sizeof(short);
+		*writeSize = sizeof(int16_t);
 	}
 	return TRUE;
 }
 
-BOOL ReadVALUE2(WORD ver, short* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
+BOOL ReadVALUE2(WORD ver, int16_t* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
 {
-	if( buff == NULL || sizeof(short) > buffSize ){
+	if( buff == NULL || sizeof(int16_t) > buffSize ){
 		return FALSE;
 	}
 	if( val != NULL ){
-		*val = *(short*)buff;
+		*val = *(int16_t*)buff;
 	}
 	if( readSize != NULL ){
-		*readSize = sizeof(short);
+		*readSize = sizeof(int16_t);
 	}
 	return TRUE;
 }
 
-DWORD GetVALUESize2(WORD ver, unsigned short val )
+DWORD GetVALUESize2(WORD ver, uint16_t val )
 {
-	return sizeof(unsigned short);
+	return sizeof(uint16_t);
 }
 
-BOOL WriteVALUE2(WORD ver, unsigned short val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
+BOOL WriteVALUE2(WORD ver, uint16_t val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
 {
-	if( buff == NULL || sizeof(unsigned short) > buffSize ){
+	if( buff == NULL || sizeof(uint16_t) > buffSize ){
 		return FALSE;
 	}
-	memcpy(buff, &val, sizeof(unsigned short));
+	memcpy(buff, &val, sizeof(uint16_t));
 	if( writeSize != NULL ){
-		*writeSize = sizeof(unsigned short);
+		*writeSize = sizeof(uint16_t);
 	}
 	return TRUE;
 }
 
-BOOL ReadVALUE2(WORD ver, unsigned short* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
+BOOL ReadVALUE2(WORD ver, uint16_t* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
 {
-	if( buff == NULL || sizeof(unsigned short) > buffSize ){
+	if( buff == NULL || sizeof(uint16_t) > buffSize ){
 		return FALSE;
 	}
 	if( val != NULL ){
-		*val = *(unsigned short*)buff;
+		*val = *(uint16_t*)buff;
 	}
 	if( readSize != NULL ){
-		*readSize = sizeof(unsigned short);
+		*readSize = sizeof(uint16_t);
 	}
 	return TRUE;
 }
 
 
-DWORD GetVALUESize2(WORD ver, int val )
+DWORD GetVALUESize2(WORD ver, int32_t val )
 {
-	return sizeof(int);
+	return sizeof(int32_t);
 }
 
-BOOL WriteVALUE2(WORD ver, int val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
+BOOL WriteVALUE2(WORD ver, int32_t val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
 {
-	if( buff == NULL || sizeof(int) > buffSize ){
+	if( buff == NULL || sizeof(int32_t) > buffSize ){
 		return FALSE;
 	}
-	memcpy(buff, &val, sizeof(int));
+	memcpy(buff, &val, sizeof(int32_t));
 	if( writeSize != NULL ){
-		*writeSize = sizeof(int);
+		*writeSize = sizeof(int32_t);
 	}
 	return TRUE;
 }
 
-BOOL ReadVALUE2(WORD ver, int* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
+BOOL ReadVALUE2(WORD ver, int32_t* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
 {
-	if( buff == NULL || sizeof(int) > buffSize ){
+	if( buff == NULL || sizeof(int32_t) > buffSize ){
 		return FALSE;
 	}
 	if( val != NULL ){
-		*val = *(int*)buff;
+		*val = *(int32_t*)buff;
 	}
 	if( readSize != NULL ){
-		*readSize = sizeof(int);
+		*readSize = sizeof(int32_t);
 	}
 	return TRUE;
 }
 
-DWORD GetVALUESize2(WORD ver, unsigned int val )
+DWORD GetVALUESize2(WORD ver, uint32_t val )
 {
-	return sizeof(unsigned int);
+	return sizeof(uint32_t);
 }
 
-BOOL WriteVALUE2(WORD ver, unsigned int val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
+BOOL WriteVALUE2(WORD ver, uint32_t val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
 {
-	if( buff == NULL || sizeof(unsigned int) > buffSize ){
+	if( buff == NULL || sizeof(uint32_t) > buffSize ){
 		return FALSE;
 	}
-	memcpy(buff, &val, sizeof(unsigned int));
+	memcpy(buff, &val, sizeof(uint32_t));
 	if( writeSize != NULL ){
-		*writeSize = sizeof(unsigned int);
+		*writeSize = sizeof(uint32_t);
 	}
 	return TRUE;
 }
 
-BOOL ReadVALUE2(WORD ver, unsigned int* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
+BOOL ReadVALUE2(WORD ver, uint32_t* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
 {
-	if( buff == NULL || sizeof(unsigned int) > buffSize ){
+	if( buff == NULL || sizeof(uint32_t) > buffSize ){
 		return FALSE;
 	}
 	if( val != NULL ){
-		*val = *(unsigned int*)buff;
+		*val = *(uint32_t*)buff;
 	}
 	if( readSize != NULL ){
-		*readSize = sizeof(unsigned int);
+		*readSize = sizeof(uint32_t);
 	}
 	return TRUE;
 }
 
-DWORD GetVALUESize2(WORD ver, long val )
+DWORD GetVALUESize2(WORD ver, int64_t val )
 {
-	return sizeof(long);
+	return sizeof(int64_t);
 }
 
-BOOL WriteVALUE2(WORD ver, long val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
+BOOL WriteVALUE2(WORD ver, int64_t val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
 {
-	if( buff == NULL || sizeof(long) > buffSize ){
+	if( buff == NULL || sizeof(int64_t) > buffSize ){
 		return FALSE;
 	}
-	memcpy(buff, &val, sizeof(long));
+	memcpy(buff, &val, sizeof(int64_t));
 	if( writeSize != NULL ){
-		*writeSize = sizeof(long);
+		*writeSize = sizeof(int64_t);
 	}
 	return TRUE;
 }
 
-BOOL ReadVALUE2(WORD ver, long* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
+BOOL ReadVALUE2(WORD ver, int64_t* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
 {
-	if( buff == NULL || sizeof(long) > buffSize ){
+	if( buff == NULL || sizeof(int64_t) > buffSize ){
 		return FALSE;
 	}
 	if( val != NULL ){
-		*val = *(long*)buff;
+		*val = *(int64_t*)buff;
 	}
 	if( readSize != NULL ){
-		*readSize = sizeof(long);
+		*readSize = sizeof(int64_t);
 	}
 	return TRUE;
 }
 
-DWORD GetVALUESize2(WORD ver, unsigned long val )
+DWORD GetVALUESize2(WORD ver, uint64_t val )
 {
-	return sizeof(unsigned long);
+	return sizeof(uint64_t);
 }
 
-BOOL WriteVALUE2(WORD ver, unsigned long val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
+BOOL WriteVALUE2(WORD ver, uint64_t val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
 {
-	if( buff == NULL || sizeof(unsigned long) > buffSize ){
+	if( buff == NULL || sizeof(uint64_t) > buffSize ){
 		return FALSE;
 	}
-	memcpy(buff, &val, sizeof(unsigned long));
+	memcpy(buff, &val, sizeof(uint64_t));
 	if( writeSize != NULL ){
-		*writeSize = sizeof(unsigned long);
+		*writeSize = sizeof(uint64_t);
 	}
 	return TRUE;
 }
 
-BOOL ReadVALUE2(WORD ver, unsigned long* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
+BOOL ReadVALUE2(WORD ver, uint64_t* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
 {
-	if( buff == NULL || sizeof(unsigned long) > buffSize ){
+	if( buff == NULL || sizeof(uint64_t) > buffSize ){
 		return FALSE;
 	}
 	if( val != NULL ){
-		*val = *(unsigned long*)buff;
+		*val = *(uint64_t*)buff;
 	}
 	if( readSize != NULL ){
-		*readSize = sizeof(unsigned long);
+		*readSize = sizeof(uint64_t);
 	}
 	return TRUE;
 }
 
-DWORD GetVALUESize2(WORD ver, __int64 val )
-{
-	return sizeof(__int64);
-}
-
-BOOL WriteVALUE2(WORD ver, __int64 val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
-{
-	if( buff == NULL || sizeof(__int64) > buffSize ){
-		return FALSE;
-	}
-	memcpy(buff, &val, sizeof(__int64));
-	if( writeSize != NULL ){
-		*writeSize = sizeof(__int64);
-	}
-	return TRUE;
-}
-
-BOOL ReadVALUE2(WORD ver, __int64* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
-{
-	if( buff == NULL || sizeof(__int64) > buffSize ){
-		return FALSE;
-	}
-	if( val != NULL ){
-		*val = *(__int64*)buff;
-	}
-	if( readSize != NULL ){
-		*readSize = sizeof(__int64);
-	}
-	return TRUE;
-}
-
-DWORD GetVALUESize2(WORD ver, unsigned __int64 val )
-{
-	return sizeof(unsigned __int64);
-}
-
-BOOL WriteVALUE2(WORD ver, unsigned __int64 val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
-{
-	if( buff == NULL || sizeof(unsigned __int64) > buffSize ){
-		return FALSE;
-	}
-	memcpy(buff, &val, sizeof(unsigned __int64));
-	if( writeSize != NULL ){
-		*writeSize = sizeof(unsigned __int64);
-	}
-	return TRUE;
-}
-
-BOOL ReadVALUE2(WORD ver, unsigned __int64* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
-{
-	if( buff == NULL || sizeof(unsigned __int64) > buffSize ){
-		return FALSE;
-	}
-	if( val != NULL ){
-		*val = *(unsigned __int64*)buff;
-	}
-	if( readSize != NULL ){
-		*readSize = sizeof(unsigned __int64);
-	}
-	return TRUE;
-}
-
-DWORD GetVALUESize2(WORD ver, vector<unsigned short>* val)
+DWORD GetVALUESize2(WORD ver, vector<uint16_t>* val)
 {
 	DWORD size = sizeof(DWORD)*2;
 	if( val == NULL ){
 		return size;
 	}
 
-	size += sizeof(unsigned short) * (DWORD)val->size();
+	size += sizeof(uint16_t) * (DWORD)val->size();
 
 	return size;
 }
 
-BOOL WriteVALUE2(WORD ver, vector<unsigned short>* val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
+BOOL WriteVALUE2(WORD ver, vector<uint16_t>* val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
 {
 	DWORD valueSize = GetVALUESize2(ver, val );
 	if( buff == NULL || valueSize > buffSize ){
@@ -368,7 +306,7 @@ BOOL WriteVALUE2(WORD ver, vector<unsigned short>* val, BYTE* buff, DWORD buffSi
 	return TRUE;
 }
 
-BOOL ReadVALUE2(WORD ver, vector<unsigned short>* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
+BOOL ReadVALUE2(WORD ver, vector<uint16_t>* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
 {
 	if( val == NULL || buff == NULL || buffSize < sizeof(DWORD)*2 ){
 		return FALSE;
@@ -393,7 +331,7 @@ BOOL ReadVALUE2(WORD ver, vector<unsigned short>* val, BYTE* buff, DWORD buffSiz
 	pos += size;
 
 	for( DWORD i= 0; i<valCount; i++ ){
-		unsigned short data;
+		uint16_t data;
 		if( ReadVALUE2(ver, &data, buff + pos, buffSize - pos, &size ) == FALSE ){
 			return FALSE;
 		}
@@ -408,19 +346,19 @@ BOOL ReadVALUE2(WORD ver, vector<unsigned short>* val, BYTE* buff, DWORD buffSiz
 	return TRUE;
 }
 
-DWORD GetVALUESize2(WORD ver, vector<unsigned long>* val)
+DWORD GetVALUESize2(WORD ver, vector<uint32_t>* val)
 {
 	DWORD size = sizeof(DWORD)*2;
 	if( val == NULL ){
 		return size;
 	}
 
-	size += sizeof(unsigned long) * (DWORD)val->size();
+	size += sizeof(uint32_t) * (DWORD)val->size();
 
 	return size;
 }
 
-BOOL WriteVALUE2(WORD ver, vector<unsigned long>* val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
+BOOL WriteVALUE2(WORD ver, vector<uint32_t>* val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
 {
 	DWORD valueSize = GetVALUESize2(ver, val );
 	if( buff == NULL || valueSize > buffSize ){
@@ -462,7 +400,7 @@ BOOL WriteVALUE2(WORD ver, vector<unsigned long>* val, BYTE* buff, DWORD buffSiz
 	return TRUE;
 }
 
-BOOL ReadVALUE2(WORD ver, vector<unsigned long>* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
+BOOL ReadVALUE2(WORD ver, vector<uint32_t>* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
 {
 	if( val == NULL || buff == NULL || buffSize < sizeof(DWORD)*2 ){
 		return FALSE;
@@ -487,7 +425,7 @@ BOOL ReadVALUE2(WORD ver, vector<unsigned long>* val, BYTE* buff, DWORD buffSize
 	pos += size;
 
 	for( DWORD i= 0; i<valCount; i++ ){
-		unsigned long data;
+		uint32_t data;
 		if( ReadVALUE2(ver, &data, buff + pos, buffSize - pos, &size ) == FALSE ){
 			return FALSE;
 		}
@@ -502,19 +440,19 @@ BOOL ReadVALUE2(WORD ver, vector<unsigned long>* val, BYTE* buff, DWORD buffSize
 	return TRUE;
 }
 
-DWORD GetVALUESize2(WORD ver, vector<__int64>* val)
+DWORD GetVALUESize2(WORD ver, vector<int64_t>* val)
 {
 	DWORD size = sizeof(DWORD)*2;
 	if( val == NULL ){
 		return size;
 	}
 
-	size += sizeof(__int64) * (DWORD)val->size();
+	size += sizeof(int64_t) * (DWORD)val->size();
 
 	return size;
 }
 
-BOOL WriteVALUE2(WORD ver, vector<__int64>* val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
+BOOL WriteVALUE2(WORD ver, vector<int64_t>* val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
 {
 	DWORD valueSize = GetVALUESize2(ver, val );
 	if( val == NULL || buff == NULL || valueSize > buffSize ){
@@ -557,7 +495,7 @@ BOOL WriteVALUE2(WORD ver, vector<__int64>* val, BYTE* buff, DWORD buffSize, DWO
 	return TRUE;
 }
 
-BOOL ReadVALUE2(WORD ver, vector<__int64>* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
+BOOL ReadVALUE2(WORD ver, vector<int64_t>* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
 {
 	if( val == NULL || buff == NULL || buffSize < sizeof(DWORD)*2 ){
 		return FALSE;
@@ -582,7 +520,7 @@ BOOL ReadVALUE2(WORD ver, vector<__int64>* val, BYTE* buff, DWORD buffSize, DWOR
 	pos += size;
 
 	for( DWORD i= 0; i<valCount; i++ ){
-		__int64 data;
+		int64_t data;
 		if( ReadVALUE2(ver, &data, buff + pos, buffSize - pos, &size ) == FALSE ){
 			return FALSE;
 		}

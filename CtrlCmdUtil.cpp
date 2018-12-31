@@ -2,330 +2,268 @@
 #include "StringUtil.h"
 #include "Util.h"
 
-DWORD GetVALUESize( char val )
+DWORD GetVALUESize( int8_t val )
 {
-	return sizeof(char);
+	return sizeof(int8_t);
 }
 
-BOOL WriteVALUE( char val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
+BOOL WriteVALUE( int8_t val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
 {
-	if( buff == NULL || sizeof(char) > buffSize ){
+	if( buff == NULL || sizeof(int8_t) > buffSize ){
 		return FALSE;
 	}
-	memcpy(buff, &val, sizeof(char));
+	memcpy(buff, &val, sizeof(int8_t));
 	if( writeSize != NULL ){
-		*writeSize = sizeof(char);
+		*writeSize = sizeof(int8_t);
 	}
 	return TRUE;
 }
 
-BOOL ReadVALUE( char* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
+BOOL ReadVALUE( int8_t* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
 {
-	if( buff == NULL || sizeof(char) > buffSize ){
+	if( buff == NULL || sizeof(int8_t) > buffSize ){
 		return FALSE;
 	}
 	if( val != NULL ){
-		*val = *(char*)buff;
+		*val = *(int8_t*)buff;
 	}
 	if( readSize != NULL ){
-		*readSize = sizeof(char);
+		*readSize = sizeof(int8_t);
 	}
 	return TRUE;
 }
 
-DWORD GetVALUESize( unsigned char val )
+DWORD GetVALUESize( uint8_t val )
 {
-	return sizeof(unsigned char);
+	return sizeof(uint8_t);
 }
 
-BOOL WriteVALUE( unsigned char val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
+BOOL WriteVALUE( uint8_t val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
 {
-	if( buff == NULL || sizeof(unsigned char) > buffSize ){
+	if( buff == NULL || sizeof(uint8_t) > buffSize ){
 		return FALSE;
 	}
-	memcpy(buff, &val, sizeof(unsigned char));
+	memcpy(buff, &val, sizeof(uint8_t));
 	if( writeSize != NULL ){
-		*writeSize = sizeof(unsigned char);
+		*writeSize = sizeof(uint8_t);
 	}
 	return TRUE;
 }
 
-BOOL ReadVALUE( unsigned char* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
+BOOL ReadVALUE( uint8_t* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
 {
-	if( buff == NULL || sizeof(unsigned char) > buffSize ){
+	if( buff == NULL || sizeof(uint8_t) > buffSize ){
 		return FALSE;
 	}
 	if( val != NULL ){
-		*val = *(unsigned char*)buff;
+		*val = *(uint8_t*)buff;
 	}
 	if( readSize != NULL ){
-		*readSize = sizeof(unsigned char);
+		*readSize = sizeof(uint8_t);
 	}
 	return TRUE;
 }
 
-DWORD GetVALUESize( short val )
+DWORD GetVALUESize( int16_t val )
 {
-	return sizeof(short);
+	return sizeof(int16_t);
 }
 
-BOOL WriteVALUE( short val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
+BOOL WriteVALUE( int16_t val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
 {
-	if( buff == NULL || sizeof(short) > buffSize ){
+	if( buff == NULL || sizeof(int16_t) > buffSize ){
 		return FALSE;
 	}
-	memcpy(buff, &val, sizeof(short));
+	memcpy(buff, &val, sizeof(int16_t));
 	if( writeSize != NULL ){
-		*writeSize = sizeof(short);
+		*writeSize = sizeof(int16_t);
 	}
 	return TRUE;
 }
 
-BOOL ReadVALUE( short* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
+BOOL ReadVALUE( int16_t* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
 {
-	if( buff == NULL || sizeof(short) > buffSize ){
+	if( buff == NULL || sizeof(int16_t) > buffSize ){
 		return FALSE;
 	}
 	if( val != NULL ){
-		*val = *(short*)buff;
+		*val = *(int16_t*)buff;
 	}
 	if( readSize != NULL ){
-		*readSize = sizeof(short);
+		*readSize = sizeof(int16_t);
 	}
 	return TRUE;
 }
 
-DWORD GetVALUESize( unsigned short val )
+DWORD GetVALUESize( uint16_t val )
 {
-	return sizeof(unsigned short);
+	return sizeof(uint16_t);
 }
 
-BOOL WriteVALUE( unsigned short val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
+BOOL WriteVALUE( uint16_t val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
 {
-	if( buff == NULL || sizeof(unsigned short) > buffSize ){
+	if( buff == NULL || sizeof(uint16_t) > buffSize ){
 		return FALSE;
 	}
-	memcpy(buff, &val, sizeof(unsigned short));
+	memcpy(buff, &val, sizeof(uint16_t));
 	if( writeSize != NULL ){
-		*writeSize = sizeof(unsigned short);
+		*writeSize = sizeof(uint16_t);
 	}
 	return TRUE;
 }
 
-BOOL ReadVALUE( unsigned short* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
+BOOL ReadVALUE( uint16_t* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
 {
-	if( buff == NULL || sizeof(unsigned short) > buffSize ){
+	if( buff == NULL || sizeof(uint16_t) > buffSize ){
 		return FALSE;
 	}
 	if( val != NULL ){
-		*val = *(unsigned short*)buff;
+		*val = *(uint16_t*)buff;
 	}
 	if( readSize != NULL ){
-		*readSize = sizeof(unsigned short);
+		*readSize = sizeof(uint16_t);
 	}
 	return TRUE;
 }
 
 
-DWORD GetVALUESize( int val )
+DWORD GetVALUESize( int32_t val )
 {
-	return sizeof(int);
+	return sizeof(int32_t);
 }
 
-BOOL WriteVALUE( int val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
+BOOL WriteVALUE( int32_t val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
 {
-	if( buff == NULL || sizeof(int) > buffSize ){
+	if( buff == NULL || sizeof(int32_t) > buffSize ){
 		return FALSE;
 	}
-	memcpy(buff, &val, sizeof(int));
+	memcpy(buff, &val, sizeof(int32_t));
 	if( writeSize != NULL ){
-		*writeSize = sizeof(int);
+		*writeSize = sizeof(int32_t);
 	}
 	return TRUE;
 }
 
-BOOL ReadVALUE( int* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
+BOOL ReadVALUE( int32_t* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
 {
-	if( buff == NULL || sizeof(int) > buffSize ){
+	if( buff == NULL || sizeof(int32_t) > buffSize ){
 		return FALSE;
 	}
 	if( val != NULL ){
-		*val = *(int*)buff;
+		*val = *(int32_t*)buff;
 	}
 	if( readSize != NULL ){
-		*readSize = sizeof(int);
+		*readSize = sizeof(int32_t);
 	}
 	return TRUE;
 }
 
-DWORD GetVALUESize( unsigned int val )
+DWORD GetVALUESize( uint32_t val )
 {
-	return sizeof(unsigned int);
+	return sizeof(uint32_t);
 }
 
-BOOL WriteVALUE( unsigned int val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
+BOOL WriteVALUE( uint32_t val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
 {
-	if( buff == NULL || sizeof(unsigned int) > buffSize ){
+	if( buff == NULL || sizeof(uint32_t) > buffSize ){
 		return FALSE;
 	}
-	memcpy(buff, &val, sizeof(unsigned int));
+	memcpy(buff, &val, sizeof(uint32_t));
 	if( writeSize != NULL ){
-		*writeSize = sizeof(unsigned int);
+		*writeSize = sizeof(uint32_t);
 	}
 	return TRUE;
 }
 
-BOOL ReadVALUE( unsigned int* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
+BOOL ReadVALUE( uint32_t* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
 {
-	if( buff == NULL || sizeof(unsigned int) > buffSize ){
+	if( buff == NULL || sizeof(uint32_t) > buffSize ){
 		return FALSE;
 	}
 	if( val != NULL ){
-		*val = *(unsigned int*)buff;
+		*val = *(uint32_t*)buff;
 	}
 	if( readSize != NULL ){
-		*readSize = sizeof(unsigned int);
+		*readSize = sizeof(uint32_t);
 	}
 	return TRUE;
 }
 
-DWORD GetVALUESize( long val )
+DWORD GetVALUESize( int64_t val )
 {
-	return sizeof(long);
+	return sizeof(int64_t);
 }
 
-BOOL WriteVALUE( long val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
+BOOL WriteVALUE( int64_t val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
 {
-	if( buff == NULL || sizeof(long) > buffSize ){
+	if( buff == NULL || sizeof(int64_t) > buffSize ){
 		return FALSE;
 	}
-	memcpy(buff, &val, sizeof(long));
+	memcpy(buff, &val, sizeof(int64_t));
 	if( writeSize != NULL ){
-		*writeSize = sizeof(long);
+		*writeSize = sizeof(int64_t);
 	}
 	return TRUE;
 }
 
-BOOL ReadVALUE( long* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
+BOOL ReadVALUE( int64_t* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
 {
-	if( buff == NULL || sizeof(long) > buffSize ){
+	if( buff == NULL || sizeof(int64_t) > buffSize ){
 		return FALSE;
 	}
 	if( val != NULL ){
-		*val = *(long*)buff;
+		*val = *(int64_t*)buff;
 	}
 	if( readSize != NULL ){
-		*readSize = sizeof(long);
+		*readSize = sizeof(int64_t);
 	}
 	return TRUE;
 }
 
-DWORD GetVALUESize( unsigned long val )
+DWORD GetVALUESize( uint64_t val )
 {
-	return sizeof(unsigned long);
+	return sizeof(uint64_t);
 }
 
-BOOL WriteVALUE( unsigned long val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
+BOOL WriteVALUE( uint64_t val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
 {
-	if( buff == NULL || sizeof(unsigned long) > buffSize ){
+	if( buff == NULL || sizeof(uint64_t) > buffSize ){
 		return FALSE;
 	}
-	memcpy(buff, &val, sizeof(unsigned long));
+	memcpy(buff, &val, sizeof(uint64_t));
 	if( writeSize != NULL ){
-		*writeSize = sizeof(unsigned long);
+		*writeSize = sizeof(uint64_t);
 	}
 	return TRUE;
 }
 
-BOOL ReadVALUE( unsigned long* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
+BOOL ReadVALUE( uint64_t* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
 {
-	if( buff == NULL || sizeof(unsigned long) > buffSize ){
+	if( buff == NULL || sizeof(uint64_t) > buffSize ){
 		return FALSE;
 	}
 	if( val != NULL ){
-		*val = *(unsigned long*)buff;
+		*val = *(uint64_t*)buff;
 	}
 	if( readSize != NULL ){
-		*readSize = sizeof(unsigned long);
+		*readSize = sizeof(uint64_t);
 	}
 	return TRUE;
 }
 
-DWORD GetVALUESize( __int64 val )
-{
-	return sizeof(__int64);
-}
-
-BOOL WriteVALUE( __int64 val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
-{
-	if( buff == NULL || sizeof(__int64) > buffSize ){
-		return FALSE;
-	}
-	memcpy(buff, &val, sizeof(__int64));
-	if( writeSize != NULL ){
-		*writeSize = sizeof(__int64);
-	}
-	return TRUE;
-}
-
-BOOL ReadVALUE( __int64* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
-{
-	if( buff == NULL || sizeof(__int64) > buffSize ){
-		return FALSE;
-	}
-	if( val != NULL ){
-		*val = *(__int64*)buff;
-	}
-	if( readSize != NULL ){
-		*readSize = sizeof(__int64);
-	}
-	return TRUE;
-}
-
-DWORD GetVALUESize( unsigned __int64 val )
-{
-	return sizeof(unsigned __int64);
-}
-
-BOOL WriteVALUE( unsigned __int64 val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
-{
-	if( buff == NULL || sizeof(unsigned __int64) > buffSize ){
-		return FALSE;
-	}
-	memcpy(buff, &val, sizeof(unsigned __int64));
-	if( writeSize != NULL ){
-		*writeSize = sizeof(unsigned __int64);
-	}
-	return TRUE;
-}
-
-BOOL ReadVALUE( unsigned __int64* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
-{
-	if( buff == NULL || sizeof(unsigned __int64) > buffSize ){
-		return FALSE;
-	}
-	if( val != NULL ){
-		*val = *(unsigned __int64*)buff;
-	}
-	if( readSize != NULL ){
-		*readSize = sizeof(unsigned __int64);
-	}
-	return TRUE;
-}
-
-DWORD GetVALUESize( vector<unsigned short>* val)
+DWORD GetVALUESize( vector<uint16_t>* val)
 {
 	DWORD size = sizeof(DWORD)*2;
 	if( val == NULL ){
 		return size;
 	}
 
-	size += sizeof(unsigned short) * (DWORD)val->size();
+	size += sizeof(uint16_t) * (DWORD)val->size();
 
 	return size;
 }
 
-BOOL WriteVALUE( vector<unsigned short>* val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
+BOOL WriteVALUE( vector<uint16_t>* val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
 {
 	DWORD valueSize = GetVALUESize( val );
 	if( buff == NULL || valueSize > buffSize ){
@@ -367,7 +305,7 @@ BOOL WriteVALUE( vector<unsigned short>* val, BYTE* buff, DWORD buffSize, DWORD*
 	return TRUE;
 }
 
-BOOL ReadVALUE( vector<unsigned short>* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
+BOOL ReadVALUE( vector<uint16_t>* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
 {
 	if( val == NULL || buff == NULL || buffSize < sizeof(DWORD)*2 ){
 		return FALSE;
@@ -392,7 +330,7 @@ BOOL ReadVALUE( vector<unsigned short>* val, BYTE* buff, DWORD buffSize, DWORD* 
 	pos += size;
 
 	for( DWORD i= 0; i<valCount; i++ ){
-		unsigned short data;
+		uint16_t data;
 		if( ReadVALUE( &data, buff + pos, buffSize - pos, &size ) == FALSE ){
 			return FALSE;
 		}
@@ -407,19 +345,19 @@ BOOL ReadVALUE( vector<unsigned short>* val, BYTE* buff, DWORD buffSize, DWORD* 
 	return TRUE;
 }
 
-DWORD GetVALUESize( vector<unsigned long>* val)
+DWORD GetVALUESize( vector<uint32_t>* val)
 {
 	DWORD size = sizeof(DWORD)*2;
 	if( val == NULL ){
 		return size;
 	}
 
-	size += sizeof(unsigned long) * (DWORD)val->size();
+	size += sizeof(uint32_t) * (DWORD)val->size();
 
 	return size;
 }
 
-BOOL WriteVALUE( vector<unsigned long>* val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
+BOOL WriteVALUE( vector<uint32_t>* val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
 {
 	DWORD valueSize = GetVALUESize( val );
 	if( buff == NULL || valueSize > buffSize ){
@@ -461,7 +399,7 @@ BOOL WriteVALUE( vector<unsigned long>* val, BYTE* buff, DWORD buffSize, DWORD* 
 	return TRUE;
 }
 
-BOOL ReadVALUE( vector<unsigned long>* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
+BOOL ReadVALUE( vector<uint32_t>* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
 {
 	if( val == NULL || buff == NULL || buffSize < sizeof(DWORD)*2 ){
 		return FALSE;
@@ -486,7 +424,7 @@ BOOL ReadVALUE( vector<unsigned long>* val, BYTE* buff, DWORD buffSize, DWORD* r
 	pos += size;
 
 	for( DWORD i= 0; i<valCount; i++ ){
-		unsigned long data;
+		uint32_t data;
 		if( ReadVALUE( &data, buff + pos, buffSize - pos, &size ) == FALSE ){
 			return FALSE;
 		}
@@ -501,19 +439,19 @@ BOOL ReadVALUE( vector<unsigned long>* val, BYTE* buff, DWORD buffSize, DWORD* r
 	return TRUE;
 }
 
-DWORD GetVALUESize( vector<__int64>* val)
+DWORD GetVALUESize( vector<int64_t>* val)
 {
 	DWORD size = sizeof(DWORD)*2;
 	if( val == NULL ){
 		return size;
 	}
 
-	size += sizeof(__int64) * (DWORD)val->size();
+	size += sizeof(int64_t) * (DWORD)val->size();
 
 	return size;
 }
 
-BOOL WriteVALUE( vector<__int64>* val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
+BOOL WriteVALUE( vector<int64_t>* val, BYTE* buff, DWORD buffSize, DWORD* writeSize )
 {
 	DWORD valueSize = GetVALUESize( val );
 	if( val == NULL || buff == NULL || valueSize > buffSize ){
@@ -556,7 +494,7 @@ BOOL WriteVALUE( vector<__int64>* val, BYTE* buff, DWORD buffSize, DWORD* writeS
 	return TRUE;
 }
 
-BOOL ReadVALUE( vector<__int64>* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
+BOOL ReadVALUE( vector<int64_t>* val, BYTE* buff, DWORD buffSize, DWORD* readSize )
 {
 	if( val == NULL || buff == NULL || buffSize < sizeof(DWORD)*2 ){
 		return FALSE;
@@ -581,7 +519,7 @@ BOOL ReadVALUE( vector<__int64>* val, BYTE* buff, DWORD buffSize, DWORD* readSiz
 	pos += size;
 
 	for( DWORD i= 0; i<valCount; i++ ){
-		__int64 data;
+		int64_t data;
 		if( ReadVALUE( &data, buff + pos, buffSize - pos, &size ) == FALSE ){
 			return FALSE;
 		}
@@ -6324,8 +6262,8 @@ BOOL CreateReserveDataStream(OLD_RESERVE_DATA* pData, CMD_STREAM* pCmd)
 	if( pData == NULL || pCmd == NULL ){
 		return FALSE;
 	}
-	pCmd->dataSize = sizeof(DWORD)*11 + sizeof(SYSTEMTIME) + sizeof(unsigned short)*4
-		+ sizeof(unsigned char)*2 + sizeof(BOOL)*4 + sizeof(WORD)*1+ sizeof(int)*2;
+	pCmd->dataSize = sizeof(DWORD)*11 + sizeof(SYSTEMTIME) + sizeof(uint16_t)*4
+		+ sizeof(uint8_t)*2 + sizeof(BOOL)*4 + sizeof(WORD)*1+ sizeof(int)*2;
 	pCmd->dataSize += (DWORD)(pData->strTitle.length()+1)*sizeof(WCHAR);
 	pCmd->dataSize += (DWORD)(pData->strStationName.length()+1)*sizeof(WCHAR);
 	pCmd->dataSize += (DWORD)(pData->strComment.length()+1)*sizeof(WCHAR);
@@ -6356,23 +6294,23 @@ BOOL CreateReserveDataStream(OLD_RESERVE_DATA* pData, CMD_STREAM* pCmd)
 	memcpy(pCmd->data + dwPos, pData->strStationName.c_str(), dwStrSize);
 	dwPos+=dwStrSize;
 
-	memcpy(pCmd->data + dwPos, &pData->usONID, sizeof(unsigned short));
-	dwPos+=sizeof(unsigned short);
+	memcpy(pCmd->data + dwPos, &pData->usONID, sizeof(uint16_t));
+	dwPos+=sizeof(uint16_t);
 
-	memcpy(pCmd->data + dwPos, &pData->usTSID, sizeof(unsigned short));
-	dwPos+=sizeof(unsigned short);
+	memcpy(pCmd->data + dwPos, &pData->usTSID, sizeof(uint16_t));
+	dwPos+=sizeof(uint16_t);
 
-	memcpy(pCmd->data + dwPos, &pData->usServiceID, sizeof(unsigned short));
-	dwPos+=sizeof(unsigned short);
+	memcpy(pCmd->data + dwPos, &pData->usServiceID, sizeof(uint16_t));
+	dwPos+=sizeof(uint16_t);
 
-	memcpy(pCmd->data + dwPos, &pData->usEventID, sizeof(unsigned short));
-	dwPos+=sizeof(unsigned short);
+	memcpy(pCmd->data + dwPos, &pData->usEventID, sizeof(uint16_t));
+	dwPos+=sizeof(uint16_t);
 
-	memcpy(pCmd->data + dwPos, &pData->ucPriority, sizeof(unsigned char));
-	dwPos+=sizeof(unsigned char);
+	memcpy(pCmd->data + dwPos, &pData->ucPriority, sizeof(uint8_t));
+	dwPos+=sizeof(uint8_t);
 
-	memcpy(pCmd->data + dwPos, &pData->ucTuijyuu, sizeof(unsigned char));
-	dwPos+=sizeof(unsigned char);
+	memcpy(pCmd->data + dwPos, &pData->ucTuijyuu, sizeof(uint8_t));
+	dwPos+=sizeof(uint8_t);
 
 	dwStrSize = (DWORD)(pData->strComment.length()+1)*sizeof(WCHAR);
 	memcpy(pCmd->data + dwPos, &dwStrSize, sizeof(DWORD));
@@ -6465,23 +6403,23 @@ BOOL CopyReserveData(OLD_RESERVE_DATA* pstData, CMD_STREAM* pCmd)
 	pstData->strStationName = (WCHAR*)(pBuff+dwPos);
 	dwPos+=dwStrSize;
 
-	pstData->usONID = *(unsigned short*)(pBuff+dwPos);
-	dwPos+=sizeof(unsigned short);
+	pstData->usONID = *(uint16_t*)(pBuff+dwPos);
+	dwPos+=sizeof(uint16_t);
 
-	pstData->usTSID = *(unsigned short*)(pBuff+dwPos);
-	dwPos+=sizeof(unsigned short);
+	pstData->usTSID = *(uint16_t*)(pBuff+dwPos);
+	dwPos+=sizeof(uint16_t);
 
-	pstData->usServiceID = *(unsigned short*)(pBuff+dwPos);
-	dwPos+=sizeof(unsigned short);
+	pstData->usServiceID = *(uint16_t*)(pBuff+dwPos);
+	dwPos+=sizeof(uint16_t);
 
-	pstData->usEventID = *(unsigned short*)(pBuff+dwPos);
-	dwPos+=sizeof(unsigned short);
+	pstData->usEventID = *(uint16_t*)(pBuff+dwPos);
+	dwPos+=sizeof(uint16_t);
 
-	pstData->ucPriority = *(unsigned char*)(pBuff+dwPos);
-	dwPos+=sizeof(unsigned char);
+	pstData->ucPriority = *(uint8_t*)(pBuff+dwPos);
+	dwPos+=sizeof(uint8_t);
 
-	pstData->ucTuijyuu = *(unsigned char*)(pBuff+dwPos);
-	dwPos+=sizeof(unsigned char);
+	pstData->ucTuijyuu = *(uint8_t*)(pBuff+dwPos);
+	dwPos+=sizeof(uint8_t);
 
 	dwStrSize = *(DWORD*)(pBuff+dwPos);
 	dwPos+=sizeof(DWORD);
@@ -6552,7 +6490,7 @@ BOOL CreateSearchKeyDataStream(OLD_SEARCH_KEY* pData, CMD_STREAM* pCmd)
 	pCmd->dataSize = sizeof(DWORD)*7 + sizeof(BOOL)*11 + sizeof(int)*12 + sizeof(WORD)*1;
 	pCmd->dataSize += (DWORD)(pData->strAnd.length()+1)*sizeof(WCHAR);
 	pCmd->dataSize += (DWORD)(pData->strNot.length()+1)*sizeof(WCHAR);
-	pCmd->dataSize += (DWORD)(pData->CHIDList.size())*sizeof(__int64);
+	pCmd->dataSize += (DWORD)(pData->CHIDList.size())*sizeof(int64_t);
 	pCmd->dataSize += (DWORD)(pData->strBat.length()+1)*sizeof(WCHAR);
 	pCmd->dataSize += (DWORD)(pData->strRecFolder.length()+1)*sizeof(WCHAR);
 	pCmd->dataSize += (DWORD)(pData->strPattern.length()+1)*sizeof(WCHAR);
@@ -6614,12 +6552,12 @@ BOOL CreateSearchKeyDataStream(OLD_SEARCH_KEY* pData, CMD_STREAM* pCmd)
 	dwPos+=sizeof(BOOL);
 
 	DWORD dwTemp = (DWORD)pData->CHIDList.size();
-	memcpy(pCmd->data + dwPos, &dwTemp, sizeof(__int64));
+	memcpy(pCmd->data + dwPos, &dwTemp, sizeof(int64_t));
 	dwPos+=sizeof(DWORD);
 
 	for( int i=0; i<(int)pData->CHIDList.size(); i++ ){
-		memcpy(pCmd->data + dwPos, &pData->CHIDList[i], sizeof(__int64));
-		dwPos+=sizeof(__int64);
+		memcpy(pCmd->data + dwPos, &pData->CHIDList[i], sizeof(int64_t));
+		dwPos+=sizeof(int64_t);
 	}
 
 	memcpy(pCmd->data + dwPos, &pData->iAutoAddID, sizeof(int));
@@ -6744,9 +6682,9 @@ BOOL CopySearchKeyData(OLD_SEARCH_KEY* pstData, CMD_STREAM* pCmd)
 	DWORD dwCount = *(DWORD*)(pBuff+dwPos);
 	dwPos+=sizeof(DWORD);
 	for( DWORD i=0; i<dwCount; i++ ){
-		__int64 Item;
-		Item = *(__int64*)(pBuff+dwPos);
-		dwPos+=sizeof(__int64);
+		int64_t Item;
+		Item = *(int64_t*)(pBuff+dwPos);
+		dwPos+=sizeof(int64_t);
 		pstData->CHIDList.push_back(Item);
 	}
 
@@ -6820,7 +6758,7 @@ BOOL CreateEventInfoData3Stream(OLD_EVENT_INFO_DATA3* pData, CMD_STREAM* pCmd)
 		return FALSE;
 	}
 	pCmd->dataSize = sizeof(DWORD)*9 + sizeof(SYSTEMTIME) + sizeof(WORD)*4
-		+ sizeof(unsigned char)*5;
+		+ sizeof(uint8_t)*5;
 	pCmd->dataSize += (DWORD)(pData->strEventName.length()+1)*sizeof(WCHAR);
 	pCmd->dataSize += (DWORD)(pData->strEventText.length()+1)*sizeof(WCHAR);
 	pCmd->dataSize += (DWORD)(pData->strEventExtText.length()+1)*sizeof(WCHAR);
@@ -6871,8 +6809,8 @@ BOOL CreateEventInfoData3Stream(OLD_EVENT_INFO_DATA3* pData, CMD_STREAM* pCmd)
 	memcpy(pCmd->data + dwPos, &pData->dwDurationSec, sizeof(DWORD));
 	dwPos+=sizeof(DWORD);
 
-	memcpy(pCmd->data + dwPos, &pData->ucComponentType, sizeof(unsigned char));
-	dwPos+=sizeof(unsigned char);
+	memcpy(pCmd->data + dwPos, &pData->ucComponentType, sizeof(uint8_t));
+	dwPos+=sizeof(uint8_t);
 
 	dwStrSize = (DWORD)(pData->strComponentTypeText.length()+1)*sizeof(WCHAR);
 	memcpy(pCmd->data + dwPos, &dwStrSize, sizeof(DWORD));
@@ -6880,17 +6818,17 @@ BOOL CreateEventInfoData3Stream(OLD_EVENT_INFO_DATA3* pData, CMD_STREAM* pCmd)
 	memcpy(pCmd->data + dwPos, pData->strComponentTypeText.c_str(), dwStrSize);
 	dwPos+=dwStrSize;
 
-	memcpy(pCmd->data + dwPos, &pData->ucAudioComponentType, sizeof(unsigned char));
-	dwPos+=sizeof(unsigned char);
+	memcpy(pCmd->data + dwPos, &pData->ucAudioComponentType, sizeof(uint8_t));
+	dwPos+=sizeof(uint8_t);
 
-	memcpy(pCmd->data + dwPos, &pData->ucESMultiLangFlag, sizeof(unsigned char));
-	dwPos+=sizeof(unsigned char);
+	memcpy(pCmd->data + dwPos, &pData->ucESMultiLangFlag, sizeof(uint8_t));
+	dwPos+=sizeof(uint8_t);
 
-	memcpy(pCmd->data + dwPos, &pData->ucMainComponentFlag, sizeof(unsigned char));
-	dwPos+=sizeof(unsigned char);
+	memcpy(pCmd->data + dwPos, &pData->ucMainComponentFlag, sizeof(uint8_t));
+	dwPos+=sizeof(uint8_t);
 
-	memcpy(pCmd->data + dwPos, &pData->ucSamplingRate, sizeof(unsigned char));
-	dwPos+=sizeof(unsigned char);
+	memcpy(pCmd->data + dwPos, &pData->ucSamplingRate, sizeof(uint8_t));
+	dwPos+=sizeof(uint8_t);
 
 	dwStrSize = (DWORD)(pData->strAudioComponentTypeText.length()+1)*sizeof(WCHAR);
 	memcpy(pCmd->data + dwPos, &dwStrSize, sizeof(DWORD));
@@ -6978,25 +6916,25 @@ BOOL CopyEventInfoData3(OLD_EVENT_INFO_DATA3* pstData, CMD_STREAM* pCmd)
 	pstData->dwDurationSec = *(DWORD*)(pBuff+dwPos);
 	dwPos+=sizeof(DWORD);
 
-	pstData->ucComponentType = *(unsigned char*)(pBuff+dwPos);
-	dwPos+=sizeof(unsigned char);
+	pstData->ucComponentType = *(uint8_t*)(pBuff+dwPos);
+	dwPos+=sizeof(uint8_t);
 
 	dwStrSize = *(DWORD*)(pBuff+dwPos);
 	dwPos+=sizeof(DWORD);
 	pstData->strComponentTypeText = (WCHAR*)(pBuff+dwPos);
 	dwPos+=dwStrSize;
 
-	pstData->ucAudioComponentType = *(unsigned char*)(pBuff+dwPos);
-	dwPos+=sizeof(unsigned char);
+	pstData->ucAudioComponentType = *(uint8_t*)(pBuff+dwPos);
+	dwPos+=sizeof(uint8_t);
 
-	pstData->ucESMultiLangFlag = *(unsigned char*)(pBuff+dwPos);
-	dwPos+=sizeof(unsigned char);
+	pstData->ucESMultiLangFlag = *(uint8_t*)(pBuff+dwPos);
+	dwPos+=sizeof(uint8_t);
 
-	pstData->ucMainComponentFlag = *(unsigned char*)(pBuff+dwPos);
-	dwPos+=sizeof(unsigned char);
+	pstData->ucMainComponentFlag = *(uint8_t*)(pBuff+dwPos);
+	dwPos+=sizeof(uint8_t);
 
-	pstData->ucSamplingRate = *(unsigned char*)(pBuff+dwPos);
-	dwPos+=sizeof(unsigned char);
+	pstData->ucSamplingRate = *(uint8_t*)(pBuff+dwPos);
+	dwPos+=sizeof(uint8_t);
 
 	dwStrSize = *(DWORD*)(pBuff+dwPos);
 	dwPos+=sizeof(DWORD);
