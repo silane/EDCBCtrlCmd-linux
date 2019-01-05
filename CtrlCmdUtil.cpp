@@ -6552,7 +6552,7 @@ BOOL CreateSearchKeyDataStream(OLD_SEARCH_KEY* pData, CMD_STREAM* pCmd)
 	dwPos+=sizeof(BOOL);
 
 	DWORD dwTemp = (DWORD)pData->CHIDList.size();
-	memcpy(pCmd->data + dwPos, &dwTemp, sizeof(int64_t));
+	memcpy(pCmd->data + dwPos, &dwTemp, sizeof(DWORD));
 	dwPos+=sizeof(DWORD);
 
 	for( int i=0; i<(int)pData->CHIDList.size(); i++ ){
